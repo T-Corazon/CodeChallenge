@@ -81,7 +81,24 @@ def isMoreRed(matirx):
 			red.append(matrix[i][4])
 			green.append(-1*matrix[i][4])
 	return sum(red)>sum(green)
-
+	
+def isMoreRed(m):
+    m.sort()
+    r = m[0][1]*m[0][2]
+    g = 0
+    m[0] += [1]
+    for i in range(1,len(m)):
+        t = [m[i][1]*m[i][2]]
+        #red = 1 green = 0
+        if m[m[i][3]-1][4]==1:
+            m[i] += [0]
+            r -= t
+            g += t
+        else:
+            m[i] += [1]
+            r += t
+            g -= t
+    return r>g
 
 matrix = [[1,10,10,0], 
 			[2,3,4,1], 
