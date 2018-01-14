@@ -1,5 +1,5 @@
 class Field(object):
-	def.__init__(self,drunk,loc):
+	def __init__(self,drunk,loc):
 		self.drunk = drunk
 		self.loc = loc
 	def move(self,cp,dist):
